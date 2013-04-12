@@ -1,17 +1,17 @@
 {
   "name": "bfs-tree-layout",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Index computations for balanced binary trees stored in BFS order",
   "main": "bfs.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "bit-twiddle": "~0.0.1",
-    "tree-layout-tester": "~0.0.1"
+    "bit-twiddle": "~0.0.1"
   },
   "devDependencies": {
-    "tap": "~0.4.1"
+    "tap": "~0.4.1",
+    "tree-layout-tester": "~0.0.1"
   },
   "scripts": {
     "test": "tap test/*.js"
