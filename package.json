@@ -1,0 +1,48 @@
+{
+  "name": "bfs-tree-layout",
+  "version": "0.0.0",
+  "description": "Index computations for balanced binary trees stored in BFS order",
+  "main": "bfs.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bit-twiddle": "~0.0.1",
+    "tree-layout-tester": "~0.0.1"
+  },
+  "devDependencies": {
+    "tap": "~0.4.1"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikolalysenko/bfs-tree-layout.git"
+  },
+  "keywords": [
+    "bfs",
+    "binary",
+    "search",
+    "tree",
+    "balanced",
+    "level",
+    "order",
+    "index",
+    "bit",
+    "twiddle",
+    "parent",
+    "left",
+    "right",
+    "ancestor",
+    "predecessor",
+    "successor",
+    "query",
+    "root",
+    "linkless"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "2bb47002c651b376714d344615a0414e4cf55baf"
+}
