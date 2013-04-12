@@ -7,7 +7,7 @@ BFS layout, unlike inorder layout, is much faster for performing binary searches
 
 ## Install
 
-    npm install inorder-tree-layout
+    npm install bfs-tree-layout
     
 ## Example
 
