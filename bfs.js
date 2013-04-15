@@ -80,6 +80,11 @@ function bfsLeft(n, x) {
 exports.left = bfsLeft
 
 function bfsRight(n, x) {
-  return (x*2) + 2
+  return (x+1)*2
 }
 exports.right = bfsRight
+
+function bfsLeaf(n, x) {
+  return (x*2 + 1) >= n
+}
+exports.leaf = bfsLeaf
