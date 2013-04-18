@@ -80,6 +80,12 @@ Returns the right child of `x`
 ### `layout.leaf(n, x)`
 Returns true if the node x is a leaf
 
+### `layout.lo(n, x)`
+Returns the left-most ancestor of x
+
+### `layout.hi(n, x)`
+Returns the right-most ancestor of x
+
 
 # Credits
 (c) 2013 Mikola Lysenko. MIT License

@@ -88,3 +88,9 @@ function bfsLeaf(n, x) {
   return (x*2 + 1) >= n
 }
 exports.leaf = bfsLeaf
+
+
+function bfsToInorder(n, x) {
+  
+}
+exports.toInorder = bfsToInorder
