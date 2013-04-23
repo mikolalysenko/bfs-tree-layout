@@ -8,18 +8,18 @@ function bfsRoot(n) {
 exports.root = bfsRoot
 
 function bfsBegin(n) {
-  return (bits.nextPow2(n+1)>>>1) - 1
+  return bfsLo(n, 0)
 }
 exports.begin = bfsBegin
 
 function bfsEnd(n) {
-  return n
+  return bfsHi(n, 0)
 }
 exports.end = bfsEnd
 
 function bfsHeight(n, x) {
-  var lgn = bits.log2(n)
-  var lgx = bits.log2(x+1)
+  var lgn = bits.log2(bits.nextPow2(n+1))
+  var lgx = bits.log2(bits.nextPow2(x+1))
   var h = lgn - lgx
   if((x+1)<<h > n) {
     --h
@@ -33,22 +33,31 @@ function bfsNext(n, x) {
   if(r < n) {
     return bfsLo(n, r)
   } else {
-    var d = bits.countTrailingZeros(~(x+1)) + 1
-    return Math.min((x - ((1<<d)-1)) >>> d, n)
+    while(x > 0 && (x&1)===0) {
+      x = (x-1)>>1
+    }
+    x = (x-1)>>1
+    if(x < 0) {
+      return bfsEnd(n)
+    }
+    return x
   }
 }
 exports.next = bfsNext
 
 function bfsPrev(n, x) {
-  if(x >= n) {
-    return bfsHi(n, 0)
-  }
   var l = bfsLeft(n, x)
   if(l < n) {
     return bfsHi(n, l)
   } else {
-    var d = bits.countTrailingZeros(~(x+2)) + 1
-    return Math.max((x - ((1<<d)-1)) >> d, 0)
+    while(x > 0 && (x&1) !== 0) {
+      x = (x-1) >> 1
+    }
+    x = (x-1) >> 1
+    if(x < 0) {
+      return bfsBegin(n)
+    }
+    return x
   }
 }
 exports.prev = bfsPrev
@@ -88,9 +97,3 @@ function bfsLeaf(n, x) {
   return (x*2 + 1) >= n
 }
 exports.leaf = bfsLeaf
-
-
-function bfsToInorder(n, x) {
-  
-}
-exports.toInorder = bfsToInorder
